@@ -222,15 +222,15 @@
   AOS.init();
 
   function checkPassword() {
-    const input = document.getElementById('pass-input').value;
-    const password = 'Kratikaa27'; // Change this to your secret password
-    if (input.toLowerCase() === password) {
-      document.getElementById('password-screen').style.display = 'none';
-      document.getElementById('love-image-container').style.display = 'block';
-    } else {
-      alert('Incorrect password. Try again!');
-    }
+  const input = document.getElementById('pass-input').value;
+  const password = 'Kratikaa27';
+  if (input === password) {
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('love-image-container').style.display = 'block';
+  } else {
+    alert('Incorrect password. Try again!');
   }
+}
 </script>
 </body>
 </html>
