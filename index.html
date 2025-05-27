@@ -143,9 +143,6 @@
   <p class="subtitle">Our journey in songs, in memories, in love</p>
 </header>
 
-<button id="music-button" onclick="playMusic()">🎶 Play Our Love Theme</button>
-<audio id="bgm" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
-
 <section data-aos="fade-up">
   <h2>1. Tum Se Hi</h2>
   <p><em>"Tum se hi din hota hai, surmai shaam aati hai..."</em></p>
@@ -212,11 +209,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
-
-  function playMusic() {
-    const audio = document.getElementById('bgm');
-    audio.play();
-  }
 
   function checkPassword() {
     const input = document.getElementById('pass-input').value;
