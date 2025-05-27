@@ -1,136 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>A Song for Every Chapter of Us — Past, Present & Forever</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fceabb, #f8b500);
-    color: #3a2e2e;
-    margin: 0;
-    padding: 1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  h1 {
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
-  }
-  p.subtitle {
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #5c3d00;
-  }
-  section {
-    margin-bottom: 1.8rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #6f4e00;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-  }
-  footer {
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #7a5c00;
-  }
-  a.playlist-link {
-    color: #4a2700;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a.playlist-link:hover {
-    text-decoration: underline;
-  }
-</style>
-  <!--
-<script>
- 
-  const correctPassword = "Kratikaa27"; 
-
-  function askPassword() {
-    const pass = prompt("Please enter the password to view this page:");
-    if (pass !== correctPassword) {
-      alert("Incorrect password. Redirecting...");
-      window.location.href = "https://www.google.com"; 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Kratikaa 💖 | Every Beat of My Heart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(145deg, #ffd1dc, #ffe4e1);
+      color: #4b2e2e;
+      margin: 0;
+      padding: 1rem;
+      max-width: 750px;
+      margin: auto;
+      display: none; /* Hidden until password is entered */
     }
-  }
-  window.onload = askPassword;
-</script> 
-  -->
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #c2185b;
+    }
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #6a1b4d;
+    }
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: #d81b60;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      color: #6a1b4d;
+    }
+    a.playlist-link {
+      color: #ad1457;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a.playlist-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Password screen */
+    #password-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff0f5;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #password-screen input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    #password-screen button {
+      padding: 10px 20px;
+      background: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #music-button {
+      margin: 20px auto;
+      display: block;
+      background: #c2185b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .love-letter {
+      display: none;
+      margin-top: 1rem;
+      background: #ffeef2;
+      border-left: 4px solid #ec407a;
+      padding: 1rem;
+      border-radius: 12px;
+      font-style: italic;
+    }
+
+    .reveal-button {
+      background: #ec407a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>A Song for Every Chapter of Us — Past, Present & Forever</h1>
-  <p class="subtitle">For Kratikaa, with all my heart</p>
+<!-- Password screen -->
+<div id="password-screen">
+  <h2>Enter the secret to open 💌</h2>
+  <input type="password" id="pass-input" placeholder="Enter password" />
+  <button onclick="checkPassword()">Unlock</button>
+</div>
+
+<header data-aos="fade-down">
+  <img src="https://i.pinimg.com/originals/f9/44/42/f94442f6d97b6bb7d4ce1e6dc85eabfd.jpg" alt="Romantic Anime Couple" />
+  <h1>For Kratikaa 💖</h1>
+  <p class="subtitle">Our journey in songs, in memories, in love</p>
 </header>
 
-<section>
-  <h2>1. Past — Memories</h2>
-  <p><em><strong>Tum Se Hi</strong></em> — "Tum se hi din hota hai, surmai shaam aati hai..."</p>
-  <p>This song reminds me of the moments we first met and how everything began with you.</p>
+<button id="music-button" onclick="playMusic()">🎶 Play Our Love Theme</button>
+<audio id="bgm" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+<section data-aos="fade-up">
+  <h2>1. Tum Se Hi</h2>
+  <p><em>"Tum se hi din hota hai, surmai shaam aati hai..."</em></p>
+  <p>Our beginning. Everything beautiful started with you.</p>
 </section>
 
-<section>
-  <h2>2. Present — Together</h2>
-  <p><em><strong>Kyon</strong></em> — "Kyun, na ham tum, chale tede-medhe se raaston pe nange paanv re..."</p>
-  <p>It captures the beautiful journey we're walking right now, hand in hand.</p>
+<section data-aos="fade-up">
+  <h2>2. Kyon</h2>
+  <p><em>"Kyun, na ham tum chale tede-medhe se raaston pe..."</em></p>
+  <p>Twists and turns, and yet always together.</p>
 </section>
 
-<section>
-  <h2>3. Forever — Promise</h2>
-  <p><em><strong>Moh Moh Ke Dhaage</strong></em> — "Tu hoga zara paagal, tune mujhko hai chuna..."</p>
-  <p>This song is my promise to cherish you forever, no matter what.</p>
+<section data-aos="fade-up">
+  <h2>3. Moh Moh Ke Dhaage</h2>
+  <p><em>"Tu hoga zara paagal, tune mujhko hai chuna..."</em></p>
+  <p>You chose me. And that changed everything.</p>
 </section>
 
-<section>
-  <h2>4. Together Always</h2>
-  <p><em><strong>Tera Hone Laga Hoon</strong></em> — "Aankhon se choo lun ke bahein tarasti hain..."</p>
-  <p>Because with you, everything feels just right and complete.</p>
+<section data-aos="fade-up">
+  <h2>4. Tera Hone Laga Hoon</h2>
+  <p><em>"Aankhon se choo lun ke bahein tarasti hain..."</em></p>
+  <p>I became yours, bit by bit, and then completely.</p>
 </section>
 
-<section>
-  <h2>5. Our Raabta</h2>
-  <p><em><strong>Raabta</strong></em> — "Tu humsafar hai, phir kya fikar hai..."</p>
-  <p>The bond we share is my strength and my joy.</p>
+<section data-aos="fade-up">
+  <h2>5. Raabta</h2>
+  <p><em>"Tu humsafar hai, phir kya fikar hai..."</em></p>
+  <p>This bond, this connection — it’s unshakable.</p>
 </section>
 
-<section>
+<section data-aos="fade-up">
   <h2>6. Itni Si Baat Hai</h2>
-  <p><em><strong>Itni Si Baat Hai</strong></em> — "Chalo ji aaj saaf saaf kehta hoon, itni si baat hai mujhe tumse pyaar hai..."</p>
-  <p>Sometimes the simplest words carry the deepest truth — I love you, completely and honestly.</p>
+  <p><em>"Itni si baat hai mujhe tumse pyaar hai..."</em></p>
+  <p>No complications. Just deep, honest love.</p>
 </section>
 
-<section>
+<section data-aos="fade-up">
   <h2>7. Chaar Kadam</h2>
-  <p><em><strong>Chaar Kadam</strong></em> — "Bin kuch kahe, bin kuch sune, haathon mein haath liye... Chaar qadam, bas chaar qadam chal do naa saath mere..."</p>
-  <p>This one is about walking life’s little journeys — four steps, together, in silence but with complete understanding.</p>
-</section>  
-
-<section>
-  <h2>Bonus Playlist</h2>
-  <p>Enjoy the complete playlist here: <a class="playlist-link" href="https://open.spotify.com/playlist/482d9hryMArkQ4WjPWGVkR?si=6600a3d50a8549f8" target="_blank" rel="noopener noreferrer">Our Special Playlist</a></p>
+  <p><em>"Chaar kadam, bas chaar kadam chal do naa saath mere..."</em></p>
+  <p>Just walk with me. The rest will fall into place.</p>
 </section>
 
-<footer>
-  <p>With all my love, forever & always 💖</p>
+<section data-aos="zoom-in">
+  <h2>🎵 Playlist</h2>
+  <p>Listen to our full playlist here: 
+    <a class="playlist-link" href="https://open.spotify.com/playlist/482d9hryMArkQ4WjPWGVkR?si=5bf7e61830bf41bf" target="_blank">Our Special Spotify Playlist</a>
+  </p>
+</section>
+
+<section data-aos="fade-in">
+  <button class="reveal-button" onclick="document.querySelector('.love-letter').style.display='block'">💌 Reveal My Love Letter</button>
+  <div class="love-letter">
+    My dearest Kratikaa,<br>
+    You’re the melody in every moment, the warmth in every word, the meaning in every song.  
+    Thank you for choosing me. For being you.  
+    I love you, endlessly. 💖
+  </div>
+</section>
+
+<footer data-aos="fade-in">
+  <p>Forever yours — in every verse, every note, every beat 💞</p>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function playMusic() {
+    const audio = document.getElementById('bgm');
+    audio.play();
+  }
+
+  function checkPassword() {
+    const input = document.getElementById('pass-input').value;
+    const correct = "Kratikaa27"; // You can change this
+    if (input === correct) {
+      document.getElementById('password-screen').style.display = 'none';
+      document.body.style.display = 'block';
+    } else {
+      alert("Wrong password! Try again 💔");
+    }
+  }
+</script>
 
 </body>
 </html>
+
