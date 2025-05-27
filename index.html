@@ -57,14 +57,6 @@
       margin-top: 3rem;
       color: #6a1b4d;
     }
-    a.playlist-link {
-      color: #ad1457;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    a.playlist-link:hover {
-      text-decoration: underline;
-    }
 
     /* Password screen */
     #password-screen {
@@ -97,6 +89,24 @@
       cursor: pointer;
       font-weight: 600;
     }
+
+    /* Image styling */
+    #love-image-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    #love-image-container img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(200, 50, 100, 0.3);
+    }
+
+    /* Spotify embed container */
+    #spotify-playlist {
+      margin: 1rem 0 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -108,10 +118,20 @@
   <button onclick="checkPassword()">Unlock</button>
 </div>
 
+<!-- Added romantic image -->
+<div id="love-image-container" data-aos="fade-up" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=750&q=80" alt="Romantic Heart Image" />
+</div>
+
 <header data-aos="fade-down">
   <h1>For Kratikaa 💖</h1>
   <p class="subtitle">Our journey in songs, in memories, in love</p>
 </header>
+
+<!-- Spotify playlist embed -->
+<div id="spotify-playlist" data-aos="fade-up">
+  <iframe src="https://open.spotify.com/embed/playlist/482d9hryMArkQ4WjPWGVkR?utm_source=generator" width="100%" height="380" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
 
 <section data-aos="fade-up" class="song" id="tum-se-hi">
   <h2>🌙 Tum Se Hi – My Love</h2>
@@ -123,7 +143,6 @@
   <p class="note">
     Kratikaa, every morning I wake up, it’s because of you that my day begins with hope and warmth. The evenings, painted in soft hues, remind me of your gentle presence beside me. It’s you who fills every moment of my life with meaning — even my breath feels connected to you. You aren’t just part of my story; you *are* my story. Without you, life feels empty, but with you, it feels like home.
   </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/4MWxS3n0qYBDgs9AzbHxQ0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
 </section>
 
 <section data-aos="fade-up" class="song" id="kyon">
@@ -136,7 +155,6 @@
   <p class="note">
     I know life isn’t always smooth, and sometimes the path feels confusing or hard to walk. But Kratikaa, with you beside me, even the crooked roads become adventures worth taking. I want us to walk barefoot through every twist and turn, to get a little lost and find new parts of ourselves along the way. Because with you, forever doesn’t scare me — it excites me.
   </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
 </section>
 
 <section data-aos="fade-up" class="song" id="moh-moh-ke-dhaage">
@@ -148,7 +166,6 @@
   <p class="note">
     Sometimes I wonder, Kratikaa, how did you choose me? Maybe I’m a little crazy, maybe you are too — but that’s what makes us perfect. You heard my silent heart, you saw the parts I didn’t say aloud, and still, you chose me. That choice is the most beautiful thread tying our souls together, and I promise to cherish it every day.
   </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/2dLLR6qlu5UJ5gk0dKz0h3" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
 </section>
 
 <section data-aos="fade-up" class="song" id="tera-hone-laga-hoon">
@@ -161,7 +178,6 @@
   <p class="note">
     When I look into your eyes, Kratikaa, I feel an unspoken call — a longing in my heart that only you can answer. It’s as if destiny itself is pulling me closer to you. I want to hold you, to be near you, and to listen to what our hearts say without words. This is the moment I knew we were meant to be.
   </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/4DElCqx0mZQgTFfPwoRx3d" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
 </section>
 
 <section data-aos="fade-up" class="song" id="raabta">
@@ -171,37 +187,12 @@
     Jeene ki wajah hi yehi marna issi ke liye”
   </blockquote>
   <p class="note">
-    You are my companion in this journey, Kratikaa, the one who makes everything feel safe and worth it. When I have you beside me, I don’t fear anything. You give my life a purpose, a reason to smile every morning and a reason to hold on tight every night. To live and to love you is all I ever want.
+    You are my companion, my reason to live, and the reason I want to face everything without fear. With you, life’s purpose becomes clear, and even the thought of goodbye feels distant. We are connected in ways words can never explain, and that bond gives me strength every day.
   </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/1PEnjAglnHcjSPS6phV3Wi" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
 </section>
 
-<section data-aos="fade-up" class="song" id="itni-si-baat-hai">
-  <h2>💖 Itni Si Baat Hai – Promise</h2>
-  <blockquote>
-    “Itni si baat hai mujhe tumse pyar hai<br />
-    Yunhi nahi main tumpe jaan deta hoon”
-  </blockquote>
-  <p class="note">
-    There’s no complicated story here, Kratikaa — just a simple, honest truth: I love you. And that love is so deep, I would give you my everything without hesitation. This is my promise to you, from the bottom of my heart, forever and always.
-  </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/0kQyA67Iq6fXzxH3wvf5PJ" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-</section>
-
-<section data-aos="fade-up" class="song" id="chaar-kadam">
-  <h2>👣 Chaar Kadam – Together</h2>
-  <blockquote>
-    “Bin kuch kahe bin kuch sune haathon mein haath liye<br />
-    Chaar qadam bas chaar qadam chal do naa saath mere”
-  </blockquote>
-  <p class="note">
-    Kratikaa, I just want to take these few simple steps with you — no words needed, just our hands held tightly together. These four steps are the start of a lifetime of walking side by side, through everything life throws at us. Will you walk with me?
-  </p>
-  <a class="playlist-link" href="https://open.spotify.com/track/3xT7N0kqYOHTkxq1LwPyJk" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-</section>
-
-<footer data-aos="fade-in">
-  <p>Forever yours — in every verse, every note, every beat 💞</p>
+<footer>
+  Made with ❤️ for Kratikaa
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -210,22 +201,14 @@
 
   function checkPassword() {
     const input = document.getElementById('pass-input').value;
-    const correct = "Kratikaa27"; // Change password here
-    if (input === correct) {
+    const password = 'love'; // Change this to your secret password
+    if (input.toLowerCase() === password) {
       document.getElementById('password-screen').style.display = 'none';
+      document.getElementById('love-image-container').style.display = 'block';
     } else {
-      alert("Wrong password! Try again 💔");
+      alert('Incorrect password. Try again!');
     }
   }
 </script>
-
 </body>
 </html>
-
-    
-     
-
-
-
-
-  
