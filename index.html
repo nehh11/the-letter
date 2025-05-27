@@ -7,21 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
+    body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(145deg, #ffd1dc, #ffe4e1);
       color: #4b2e2e;
-    }
-    body.locked {
-      overflow: hidden;
-    }
-    #content {
-      display: none;
+      margin: 0;
       padding: 1rem;
       max-width: 750px;
       margin: auto;
+      display: none;
     }
     header {
       text-align: center;
@@ -54,31 +48,32 @@
       color: #d81b60;
       margin-bottom: 0.5rem;
     }
-    p {
+    p, blockquote {
       font-size: 1rem;
       line-height: 1.6;
     }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 3rem;
+    blockquote {
+      font-style: italic;
       color: #6a1b4d;
+      margin: 0.5rem 0;
     }
-    a.playlist-link {
-      color: #ad1457;
-      font-weight: bold;
-      text-decoration: none;
+    .note {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #4b2e2e;
     }
-    a.playlist-link:hover {
-      text-decoration: underline;
+    .embed-player {
+      width: 100%;
+      height: 80px;
+      border: none;
+      margin-top: 0.5rem;
     }
-
     #password-screen {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: #fff0f5;
-      z-index: 9999;
+      z-index: 999;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,114 +94,49 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
-    #music-button {
-      margin: 20px auto;
-      display: block;
-      background: #c2185b;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .love-letter {
-      display: none;
-      margin-top: 1rem;
-      background: #ffeef2;
-      border-left: 4px solid #ec407a;
-      padding: 1rem;
-      border-radius: 12px;
-      font-style: italic;
-    }
-
-    .reveal-button {
-      background: #ec407a;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
   </style>
 </head>
-<body class="locked">
+<body>
+  <div id="password-screen">
+    <h2>Enter the secret to open 💌</h2>
+    <input type="password" id="pass-input" placeholder="Enter password" />
+    <button onclick="checkPassword()">Unlock</button>
+  </div>
 
-<!-- Password screen -->
-<div id="password-screen">
-  <h2>Enter the secret to open 💌</h2>
-  <input type="password" id="pass-input" placeholder="Enter password" />
-  <button onclick="checkPassword()">Unlock</button>
-</div>
-
-<div id="content">
-  <header data-aos="fade-down">
-    <img src="https://i.pinimg.com/originals/f9/44/42/f94442f6d97b6bb7d4ce1e6dc85eabfd.jpg" alt="Romantic Anime Couple" />
+  <header>
+    <img src="https://images.app.goo.gl/ERbnHbf1L3pYQEMw7" alt="Romantic Anime Couple" />
     <h1>For Kratikaa 💖</h1>
     <p class="subtitle">Our journey in songs, in memories, in love</p>
   </header>
 
-  <button id="music-button" onclick="playMusic()">🎶 Play Our Love Theme</button>
-  <audio id="bgm" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
-
-  <section data-aos="fade-up"><h2>1. Tum Se Hi</h2><p><em>"Tum se hi din hota hai, surmai shaam aati hai..."</em></p></section>
-  <section data-aos="fade-up"><h2>2. Kyon</h2><p><em>"Kyun, na ham tum chale tede-medhe se raaston pe..."</em></p></section>
-  <section data-aos="fade-up"><h2>3. Moh Moh Ke Dhaage</h2><p><em>"Tu hoga zara paagal, tune mujhko hai chuna..."</em></p></section>
-  <section data-aos="fade-up"><h2>4. Tera Hone Laga Hoon</h2><p><em>"Aankhon se choo lun ke bahein tarasti hain..."</em></p></section>
-  <section data-aos="fade-up"><h2>5. Raabta</h2><p><em>"Tu humsafar hai, phir kya fikar hai..."</em></p></section>
-  <section data-aos="fade-up"><h2>6. Itni Si Baat Hai</h2><p><em>"Itni si baat hai mujhe tumse pyaar hai..."</em></p></section>
-  <section data-aos="fade-up"><h2>7. Chaar Kadam</h2><p><em>"Chaar kadam, bas chaar kadam chal do naa saath mere..."</em></p></section>
-
-  <section data-aos="zoom-in">
-    <h2>🎵 Playlist</h2>
-    <p>Listen to our full playlist here: 
-      <a class="playlist-link" href="https://open.spotify.com/playlist/482d9hryMArkQ4WjPWGVkR?si=5bf7e61830bf41bf" target="_blank">Our Special Spotify Playlist</a>
+  <section class="song" id="tum-se-hi">
+    <h2>🌙 Tum Se Hi – Mohit Chauhan</h2>
+    <blockquote>
+      “Tum se hi din hota hai, surmai shaam aati hai<br />
+      Tum se hi, tum se hi har ghadi saans aati hai<br />
+      Zindagi kehlaati hai tum se hi, tum se hi”
+    </blockquote>
+    <p class="note">
+      These lines always remind me how you're part of every moment — from the start of my day to its quiet end. You’re not just in my life, Kratikaa… you are my life.
     </p>
+    <iframe class="embed-player" src="https://open.spotify.com/embed/track/4MWxS3n0qYBDgs9AzbHxQ0" allow="encrypted-media" allowfullscreen></iframe>
   </section>
 
-  <section data-aos="fade-in">
-    <button class="reveal-button" onclick="document.querySelector('.love-letter').style.display='block'">💌 Reveal My Love Letter</button>
-    <div class="love-letter">
-      My dearest Kratikaa,<br>
-      You’re the melody in every moment, the warmth in every word, the meaning in every song.  
-      Thank you for choosing me. For being you.  
-      I love you, endlessly. 💖
-    </div>
-  </section>
-
-  <footer data-aos="fade-in">
+  <footer>
     <p>Forever yours — in every verse, every note, every beat 💞</p>
   </footer>
-</div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  function playMusic() {
-    const audio = document.getElementById('bgm');
-    audio.play();
-  }
-
-  function checkPassword() {
-    const input = document.getElementById('pass-input').value;
-    const correct = "Kratikaa27"; // your password
-    if (input === correct) {
-      document.getElementById('password-screen').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-      document.body.classList.remove('locked');
-    } else {
-      alert("Wrong password! Try again 💔");
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('pass-input').value;
+      const correct = "Kratikaa27";
+      if (input === correct) {
+        document.getElementById('password-screen').style.display = 'none';
+        document.body.style.display = 'block';
+      } else {
+        alert("Wrong password! Try again 💔");
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
-
-
-
-
